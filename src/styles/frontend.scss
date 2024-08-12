@@ -1,0 +1,12 @@
+/**
+ * Frontend styles.
+ *
+ * These styles are enqueued on every front-end page of the site.
+ *
+ * Styles for specific core or 3rd party blocks should be added in the blocks
+ * folder.
+ */
+
+@use "tools/layers";
+
+@include layers.output-all;

@@ -1,0 +1,15 @@
+/**
+ * Editor styles.
+ *
+ * These styles are enqueued only in the editor.
+ *
+ * Styles for specific core or 3rd party blocks should be added in the blocks
+ * folder.
+ */
+
+@use "tools/context" as context with (
+	$context: editor,
+);
+@use "tools/layers";
+
+@include layers.output-all;

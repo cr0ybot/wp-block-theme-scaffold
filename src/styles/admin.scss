@@ -1,0 +1,9 @@
+/**
+ * Admin styles.
+ *
+ * These styles are enqueued on every admin screen.
+ */
+
+@use "tools/context" as context with (
+	$context: admin,
+);
