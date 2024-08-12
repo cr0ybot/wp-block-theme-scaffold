@@ -1,0 +1,61 @@
+//
+// Tool: layers.
+//
+// Use this module to include all styles for a specific layer which corresponds
+// to a folder $root within `src/styles/`.
+//
+// @use 'tools/layer';
+// @include layers.output(base);
+// @include layers.add-to(base) {
+//   .foo {
+//     color: red;
+//   }
+// }
+//
+
+@use "sass:list";
+@use "sass:meta";
+
+$folder: theme !default;
+$layers: reset, base, layout, components, blocks, utilities !default;
+$root: true !default;
+
+@if $root {
+	// Define all layers immediately.
+	@layer #{$layers};
+}
+
+// Output a layer.
+@mixin output($name) {
+	@if list.index($layers, $name) {
+		@layer #{$name} {
+			@include meta.load-css("#{$folder}/#{$name}");
+		}
+	} @else {
+		@warn "Layer `#{$name}` not found in layers: #{$layers}.";
+
+		@include meta.load-css("#{$folder}/#{$name}");
+	}
+}
+
+// Output all layers in the defined order.
+@mixin output-all {
+	@each $name in $layers {
+		// Output all except "blocks" layer.
+		@if $name != "blocks" {
+			@include output($name);
+		}
+	}
+}
+
+// Add content to a layer.
+@mixin add-to($name) {
+	@if list.index($layers, $name) {
+		@layer #{$name} {
+			@content;
+		}
+	} @else {
+		@warn "Layer `#{$name}` not found in layers: #{$layers}.";
+		@content;
+	}
+}

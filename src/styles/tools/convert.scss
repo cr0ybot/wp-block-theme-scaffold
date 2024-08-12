@@ -1,0 +1,47 @@
+//
+// Tool: convert.
+//
+// Value conversion tools.
+//
+
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+@use "sass:meta";
+@use "sass:string";
+
+$base-font-size: 16; // px
+
+//
+// Transform px value to em.
+//
+// Accepts both unitless and px unit arguments.
+//
+@function px2em($pixels, $context: $base-font-size) {
+	@if math.is-unitless($pixels) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if math.is-unitless($context) {
+		$context: $context * 1px;
+	}
+
+	@return math.div($pixels, $context) * 1em;
+}
+
+//
+// Transform px value to rem.
+//
+// Accepts both unitless and px unit arguments.
+//
+@function px2rem($pixels, $context: $base-font-size) {
+	@if math.is-unitless($pixels) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if math.is-unitless($context) {
+		$context: $context * 1px;
+	}
+
+	@return math.div($pixels, $context) * 1rem;
+}

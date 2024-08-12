@@ -1,0 +1,44 @@
+//
+// Tool: context.
+//
+// Use this module to flag styles for specific entrypoints.
+//
+// @use 'tools/context';
+// @include context.is(frontend) {
+//   // ...frontend-only styles
+// }
+// @include context.is(editor) {
+//   // ...editor-only styles
+// }
+// @include context.not(admin) {
+//   // ...not-admin styles
+// }
+// @include context.any(frontend, editor) {
+//   // ...frontend and editor styles
+// }
+//
+
+@use "sass:list";
+
+$context: frontend !default;
+
+// Only output content if the current context matches the given name.
+@mixin is($name: frontend) {
+	@if $name == $context {
+		@content;
+	}
+}
+
+// Only output content if the current context does not match the given name.
+@mixin not($name: frontend) {
+	@if $name != $context {
+		@content;
+	}
+}
+
+// Only output content if the current context matches any of the given names.
+@mixin any($names...) {
+	@if list.index($names, $context) {
+		@content;
+	}
+}

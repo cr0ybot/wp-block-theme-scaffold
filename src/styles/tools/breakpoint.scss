@@ -1,0 +1,65 @@
+//
+// Tool: breakpoint.
+//
+// Use this to resolve breakpoints for @media and @container queries. Using the
+// provided utilities helps keep min-width and max-width queries consistent.
+// All utilities assume a mobile-first approach and use range syntax.
+//
+// Note that breakpoint values are converted to em units for better
+// accessibility. Breakpoints should NOT use rem units due to browser
+// inconsistencies with the root font size.
+// https://medium.com/@barrypeng6/why-should-not-use-rem-unit-in-media-query-5645d0163ce5
+//
+// @use 'tools/breakpoint';
+// @media screen and (breakpoint.at(md)) {
+//   ...
+// }
+//
+
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "tools/convert" as *;
+
+$breakpoints: (
+	// Small screens (mobile).
+	sm: 600px,
+	// Medium screens (tablet).
+	md: 768px,
+	// Large screens (laptop).
+	lg: 1024px,
+	// Extra large screens (desktop).
+	xl: 1280px,
+	// Extra extra large screens (ceo).
+	xxl: 1440px,
+) !default;
+
+// Sizes at and above the breakpoint.
+@function at($breakpoint, $dimension: width) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		$breakpoint: map.get($breakpoints, $breakpoint);
+	}
+
+	@return "#{$dimension} >= #{px2em($breakpoint)}";
+}
+
+// Sizes below the breakpoint.
+@function under($breakpoint, $dimension: width) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		$breakpoint: map.get($breakpoints, $breakpoint);
+	}
+
+	@return "#{$dimension} < #{px2em($breakpoint)}";
+}
+
+// Sizes at and above $min and below $max.
+@function between($min, $max, $dimension: width) {
+	@if map.has-key($breakpoints, $min) {
+		$min: map.get($breakpoints, $min);
+	}
+	@if map.has-key($breakpoints, $max) {
+		$max: map.get($breakpoints, $max);
+	}
+
+	@return "#{px2em($min)} <= #{$dimension} < #{px2em($max)}";
+}
