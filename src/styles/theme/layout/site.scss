@@ -1,0 +1,46 @@
+//
+// Layout: site.
+//
+
+@use "tools/context";
+
+.wp-site-blocks {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
+	width: 100%;
+
+	@include context.is(editor) {
+		$self: &;
+
+		// In Editor, increase specificity to override default display.
+		&#{$self} {
+			display: grid;
+		}
+	}
+
+	body.admin-bar & {
+		min-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px));
+	}
+
+	> * {
+		min-width: 0; // Resolves issue with some elements forcing horizontal overflow.
+	}
+
+	> header {
+		grid-area: header;
+	}
+
+	> main {
+		grid-area: main;
+	}
+
+	> footer {
+		grid-area: footer;
+	}
+}
