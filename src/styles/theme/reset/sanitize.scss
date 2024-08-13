@@ -1,0 +1,13 @@
+//
+// Sanitize.css
+//
+// A modern alternative to CSS resets with useful defaults.
+//
+// https://github.com/csstools/sanitize.css
+//
+
+@use "pkg:sanitize.css";
+@use "pkg:sanitize.css/assets.css";
+@use "pkg:sanitize.css/forms.css";
+@use "pkg:sanitize.css/reduce-motion.css";
+@use "pkg:sanitize.css/typography.css";
