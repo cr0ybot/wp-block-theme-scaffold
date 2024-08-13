@@ -1,0 +1,31 @@
+{
+	"name": "wp-block-theme-scaffold",
+	"version": "0.0.0",
+	"description": "A WordPress block theme scaffold with modern sensibilities",
+	"directories": {
+		"doc": "docs",
+		"lib": "lib"
+	},
+	"scripts": {
+		"start": "gulp-wp",
+		"build": "gulp-wp build",
+		"version": "gulp-wp version && git add --all"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cr0ybot/wp-block-theme-scaffold.git"
+	},
+	"keywords": [
+		"wordpress"
+	],
+	"author": {
+		"name": "Cory Hughart",
+		"email": "cory@coryhughart.com",
+		"url": "https://coryhughart.com"
+	},
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/cr0ybot/wp-block-theme-scaffold/issues"
+	},
+	"homepage": "https://github.com/cr0ybot/wp-block-theme-scaffold#readme"
+}
