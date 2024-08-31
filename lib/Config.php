@@ -1,8 +1,12 @@
 <?php
 /**
- * Config
+ * Config.php
  *
- * @package WPBTS
+ * @author    Cory Hughart <cory@coryhughart.com>
+ * @copyright 2024 Cory Hughart
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ * @link      https://github.com/cr0ybot/wp-block-theme-scaffold
+ * @package   WPBTS
  */
 
 namespace WPBTS;
@@ -12,6 +16,7 @@ use get_theme_file_uri;
 
 /**
  * Config class.
+ *
  * Handles global configuration of the theme.
  */
 final class Config {

@@ -1,8 +1,12 @@
 <?php
 /**
- * Asset Args.
+ * Assets/Asset_Args.php
  *
- * @package WPBTS
+ * @author    Cory Hughart <cory@coryhughart.com>
+ * @copyright 2024 Cory Hughart
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ * @link      https://github.com/cr0ybot/wp-block-theme-scaffold
+ * @package   WPBTS
  */
 
 namespace WPBTS\Assets;
@@ -11,6 +15,7 @@ use WPBTS\Assets\Asset_Type;
 
 /**
  * Asset Args class.
+ *
  * Handles registration arguments depending on asset type. For scripts, it
  * includes strategy and in_footer. For styles, it includes media.
  */

@@ -1,7 +1,11 @@
 <?php
 /**
- * Asset
+ * Assets/Asset.php.
  *
+ * @author    Cory Hughart <cory@coryhughart.com>
+ * @copyright 2024 Cory Hughart
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ * @link      https://github.com/cr0ybot/wp-block-theme-scaffold
  * @package WPBTS
  */
 
@@ -13,6 +17,7 @@ use WPBTS\Assets\Asset_Args;
 
 /**
  * Asset class.
+ *
  * Handles script and style registration.
  */
 class Asset {

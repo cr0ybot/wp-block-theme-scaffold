@@ -1,8 +1,14 @@
 <?php
 /**
- * Utility functions.
+ * Utilities.php
  *
- * @package WPBTS
+ * This file contains generic utility functions for use throughout the theme.
+ *
+ * @author    Cory Hughart <cory@coryhughart.com>
+ * @copyright 2024 Cory Hughart
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ * @link      https://github.com/cr0ybot/wp-block-theme-scaffold
+ * @package   WPBTS
  */
 
 namespace WPBTS\Utilities;

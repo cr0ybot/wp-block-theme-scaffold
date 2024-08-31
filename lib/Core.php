@@ -1,8 +1,12 @@
 <?php
 /**
- * Core
+ * Core.php
  *
- * @package WPBTS
+ * @author    Cory Hughart <cory@coryhughart.com>
+ * @copyright 2024 Cory Hughart
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GPL-3.0-or-later
+ * @link      https://github.com/cr0ybot/wp-block-theme-scaffold
+ * @package   WPBTS
  */
 
 namespace WPBTS;
@@ -12,7 +16,9 @@ use WPBTS\Config;
 
 /**
  * Core theme singleton class.
- * Handles setup of the theme.
+ *
+ * Handles setup of the theme. You can optionally pass a Config instance to the
+ * initialize method, otherwise it will use the default config.
  */
 final class Core {
 	/**
