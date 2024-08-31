@@ -48,11 +48,11 @@ class Asset {
 	 * @param string $attribute Optional. Asset attribute to fetch instead of the whole asset info.
 	 */
 	public static function get_asset_info( string $name, string $attribute = null ) {
-		$core = Core::get_instance();
-		if ( file_exists( $core->get_build_path( 'js/' . $name . '.asset.php' ) ) ) {
-			$asset = require $core->get_build_path( 'js/' . $name . '.asset.php' );
-		} elseif ( file_exists( $core->get_build_path( 'css/' . $name . '.asset.php' ) ) ) {
-			$asset = require $core->get_build_path( 'css/' . $name . '.asset.php' );
+		$config = Core::get_instance()->get_config();
+		if ( file_exists( $config->get_build_path( 'js/' . $name . '.asset.php' ) ) ) {
+			$asset = require $config->get_build_path( 'js/' . $name . '.asset.php' );
+		} elseif ( file_exists( $config->get_build_path( 'css/' . $name . '.asset.php' ) ) ) {
+			$asset = require $config->get_build_path( 'css/' . $name . '.asset.php' );
 		} else {
 			return null;
 		}
@@ -103,7 +103,7 @@ class Asset {
 		}
 
 		$handle = self::get_asset_handle( $this->name );
-		$src    = $core->get_build_url( $this->type . '/' . $this->name . '.' . $this->type->get_extension() );
+		$src    = $core->get_config()->get_build_url( $this->type . '/' . $this->name . '.' . $this->type->get_extension() );
 
 		$registered = false;
 		if ( Asset_Type::script === $this->type ) {

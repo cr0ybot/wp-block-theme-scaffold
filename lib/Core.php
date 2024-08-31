@@ -7,9 +7,12 @@
 
 namespace WPBTS;
 
+use Exception;
+use WPBTS\Config;
+
 /**
  * Core theme singleton class.
- * Handles global configuration and setup of the theme.
+ * Handles setup of the theme.
  */
 final class Core {
 	/**
@@ -22,17 +25,17 @@ final class Core {
 	/**
 	 * Initialize with global config.
 	 *
-	 * @param string $build_dir Build directory. Default 'dist'.
+	 * @param Config $config Optional. Config instance.
 	 *
-	 * @throws \Exception If Core is already initialized.
+	 * @throws Exception If Core is already initialized.
 	 */
 	public static function initialize(
-		string $build_dir = 'dist',
+		Config $config = null,
 	) {
 		if ( isset( self::$instance ) ) {
-			throw new \Exception( 'Core is already initialized.' );
+			throw new Exception( 'Core is already initialized.' );
 		}
-		self::$instance = new self( $build_dir );
+		self::$instance = new self( $config );
 	}
 
 	/**
@@ -40,32 +43,23 @@ final class Core {
 	 *
 	 * @return Core
 	 *
-	 * @throws \Exception If Core is not yet initialized.
+	 * @throws Exception If Core is not yet initialized.
 	 */
 	public static function get_instance() {
 		if ( ! isset( self::$instance ) ) {
-			throw new \Exception( 'Core is not yet initialized.' );
+			throw new Exception( 'Core is not yet initialized.' );
 		}
 
 		return self::$instance;
 	}
 
 	/**
-	 * Get build file path.
+	 * Get config.
 	 *
-	 * @param string $build_file_path Path of file relative to build dir.
+	 * @return Config
 	 */
-	public function get_build_path( string $build_file_path ) {
-		return get_theme_file_path( $this->build_dir . '/' . $build_file_path );
-	}
-
-	/**
-	 * Get build file URL.
-	 *
-	 * @param string $build_file_path Path of file relative to build dir.
-	 */
-	public function get_build_url( string $build_file_path ) {
-		return get_theme_file_uri( $this->build_dir . '/' . $build_file_path );
+	public function get_config() {
+		return $this->config;
 	}
 
 	/**
@@ -87,10 +81,10 @@ final class Core {
 	/**
 	 * Constructor.
 	 *
-	 * @param string $build_dir Build directory.
+	 * @param Config $config Config instance.
 	 */
 	private function __construct(
-		private string $build_dir,
+		private Config $config,
 	) {
 		$this->setup_hooks();
 	}
