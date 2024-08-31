@@ -1,0 +1,30 @@
+{
+	"name": "cr0ybot/wp-block-theme-scaffold",
+	"description": "A WordPress block theme scaffold with modern sensibilities",
+	"type": "project",
+	"license": "GPL-3.0-or-later",
+	"autoload": {
+		"psr-4": {
+			"WPBTS\\": "lib/"
+		}
+	},
+	"authors": [
+		{
+			"name": "Cory Hughart",
+			"email": "cory@coryhughart.com"
+		}
+	],
+	"require": {
+		"php-di/php-di": "^7.0"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+		"squizlabs/php_codesniffer": "^3.10",
+		"wp-coding-standards/wpcs": "^3.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
