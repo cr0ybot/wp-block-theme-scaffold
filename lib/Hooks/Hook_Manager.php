@@ -11,9 +11,7 @@
  * @package   WPBTS
  */
 
-namespace WPBTS\Core;
-
-use WPBTS\Contracts\Hook_Subscriber;
+namespace WPBTS\Hooks;
 
 use function add_filter;
 use function remove_filter;

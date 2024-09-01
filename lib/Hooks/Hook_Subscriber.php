@@ -9,7 +9,7 @@
  * @package   WPBTS
  */
 
-namespace WPBTS\Contracts;
+namespace WPBTS\Hooks;
 
 /**
  * Hook Subscriber interface.
