@@ -13,6 +13,8 @@ namespace WPBTS;
 
 use Exception;
 use WPBTS\Config;
+use WPBTS\Hooks\Hook_Manager;
+use WPBTS\Hooks\Hook_Subscriber;
 
 /**
  * Core theme singleton class.
@@ -20,7 +22,7 @@ use WPBTS\Config;
  * Handles setup of the theme. You can optionally pass a Config instance to the
  * initialize method, otherwise it will use the default config.
  */
-final class Core {
+final class Core implements Hook_Subscriber {
 	/**
 	 * Instance.
 	 *
@@ -31,17 +33,19 @@ final class Core {
 	/**
 	 * Initialize with global config.
 	 *
-	 * @param Config $config Optional. Config instance.
+	 * @param Config       $config Optional. Config instance.
+	 * @param Hook_Manager $hook_manager Optional. Hook Manager instance.
 	 *
 	 * @throws Exception If Core is already initialized.
 	 */
 	public static function initialize(
-		Config $config = null,
+		Config $config = new Config(),
+		Hook_Manager $hook_manager = new Hook_Manager(),
 	) {
 		if ( isset( self::$instance ) ) {
 			throw new Exception( 'Core is already initialized.' );
 		}
-		self::$instance = new self( $config );
+		self::$instance = new self( $config, $hook_manager );
 	}
 
 	/**
@@ -69,7 +73,19 @@ final class Core {
 	}
 
 	/**
+	 * {@inheritDoc}
+	 */
+	public function get_subscribed_hooks(): array {
+		return [
+			'after_setup_theme' => 'setup_theme',
+		];
+	}
+
+	/**
 	 * Get theme version.
+	 *
+	 * Why do so many theme scaffolds use a constant that has to be updated
+	 * instead of just getting the version from the theme header?
 	 *
 	 * @return string
 	 */
@@ -87,18 +103,15 @@ final class Core {
 	/**
 	 * Constructor.
 	 *
-	 * @param Config $config Config instance.
+	 * @param Config       $config Config instance.
+	 * @param Hook_Manager $hook_manager Hook Manager instance.
 	 */
 	private function __construct(
 		private Config $config,
+		private Hook_Manager $hook_manager,
 	) {
-		$this->setup_hooks();
-	}
+		$this->hook_manager->add_subscribed_hooks( $this );
 
-	/**
-	 * Setup hooks.
-	 */
-	private function setup_hooks() {
-		add_action( 'after_setup_theme', array( $this, 'setup_theme' ) );
+		// @todo load modules
 	}
 }
