@@ -1,6 +1,6 @@
 <?php
 /**
- * Assets/Asset.php.
+ * Assets/Asset.php
  *
  * @author    Cory Hughart <cory@coryhughart.com>
  * @copyright 2024 Cory Hughart
@@ -12,8 +12,6 @@
 namespace WPBTS\Assets;
 
 use WPBTS\Core;
-use WPBTS\Assets\Asset_Type;
-use WPBTS\Assets\Asset_Args;
 
 /**
  * Asset class.
@@ -23,13 +21,6 @@ use WPBTS\Assets\Asset_Args;
 class Asset {
 
 	/**
-	 * Handle prefix.
-	 *
-	 * @var string
-	 */
-	private $handle_prefix = 'wpbts-';
-
-	/**
 	 * Asset arguments.
 	 *
 	 * @var Asset_Args
@@ -37,13 +28,28 @@ class Asset {
 	private Asset_Args $args;
 
 	/**
-	 * Get asset handle.
+	 * Whether the asset has been registered.
+	 *
+	 * @var boolean
+	 */
+	private $registered = false;
+
+	/**
+	 * Get asset handle prefix.
+	 */
+	public static function get_asset_handle_prefix() {
+		$config = Core::get_instance()->get_config();
+		return $config->theme_namespace . '-';
+	}
+
+	/**
+	 * Format asset handle.
 	 *
 	 * @param string $name Asset name.
 	 * @return string
 	 */
-	public static function get_asset_handle( string $name ) {
-		return self::$handle_prefix . $name;
+	public static function format_asset_handle( string $name ) {
+		return self::get_asset_handle_prefix() . $name;
 	}
 
 	/**
@@ -73,15 +79,25 @@ class Asset {
 	 * Constructor.
 	 *
 	 * @param string     $name Asset name.
-	 * @param Asset_Type $type Asset type.
+	 * @param Asset_Type $type Optional. Asset type. Default script.
+	 * @param ?string    $src Optional. Asset source URL, generally for external assets. Default null, will use build URL.
+	 * @param ?string    $version Optional. Asset version. Default null, will use version from asset file or theme version.
 	 * @param array      $dependencies Optional. Asset dependencies. Default empty array.
 	 * @param Asset_Args $args Optional. Asset args. Default empty array.
+	 * @param string     $enqueue_hook Optional. Enqueue hook. Default 'wp_enqueue_scripts'.
+	 * @param int        $priority Optional. Enqueue priority. Default 10.
+	 * @param callable   $enqueue_condition Optional. Enqueue condition. Default null.
 	 */
 	public function __construct(
 		private string $name,
-		private Asset_Type $type,
+		private Asset_Type $type = Asset_Type::script,
+		private ?string $src = null,
+		private ?string $version = null,
 		private array $dependencies = array(),
 		?Asset_Args $args,
+		private string $enqueue_hook = 'wp_enqueue_scripts',
+		private int $priority = 10,
+		private callable $enqueue_condition = null
 	) {
 		if ( ! $args ) {
 			$args = new Asset_Args( $type );
@@ -90,25 +106,36 @@ class Asset {
 	}
 
 	/**
+	 * Get asset handle.
+	 *
+	 * @return string Formatted asset handle.
+	 */
+	public function get_handle(): string {
+		return self::format_asset_handle( $this->name );
+	}
+
+	/**
 	 * Register asset.
 	 *
-	 * @param bool $enqueue Optional. Whether to enqueue the asset. Default false.
-	 *
-	 * @return string|bool Registered asset handle on success, false on failure.
+	 * @return string|false Registered asset handle on success, false on failure.
 	 */
-	public function register( bool $enqueue = false ): string|bool {
+	public function register(): string|false {
 		$core       = Core::get_instance();
-		$asset_info = self::get_asset_info( $this->name );
+		$handle     = $this->get_handle();
+		$src        = $this->src;
+		$asset_info = null;
+
+		if ( $src === null ) {
+			$asset_info = self::get_asset_info( $this->name );
+			$src        = $core->get_config()->get_build_url( $this->type . '/' . $this->name . '.' . $this->type->get_extension() );
+		}
 
 		if ( ! $asset_info ) {
 			$asset_info = array(
-				'version'      => $core->get_theme_version(),
+				'version'      => $this->version ?? $core->get_theme_version(),
 				'dependencies' => array(),
 			);
 		}
-
-		$handle = self::get_asset_handle( $this->name );
-		$src    = $core->get_config()->get_build_url( $this->type . '/' . $this->name . '.' . $this->type->get_extension() );
 
 		$registered = false;
 		if ( Asset_Type::script === $this->type ) {
@@ -129,18 +156,42 @@ class Asset {
 			);
 		}
 
-		if ( $enqueue ) {
-			if ( $registered ) {
-				if ( Asset_Type::script === $this->type ) {
-					wp_enqueue_script( $handle );
-				} elseif ( Asset_Type::style === $this->type ) {
-					wp_enqueue_style( $handle );
-				}
-			} else {
-				return false;
-			}
-		}
+		$this->registered = $registered;
 
 		return $registered ? $handle : false;
+	}
+
+	/**
+	 * Enqueue asset.
+	 *
+	 * @return string|bool Registered asset handle on success, false on failure.
+	 */
+	public function enqueue(): string|bool {
+		if ( ! $this->is_enqueue_condition_met() ) {
+			return false;
+		}
+
+		if ( ! $this->registered ) {
+			$this->register();
+		}
+
+		$handle = $this->get_handle();
+
+		if ( Asset_Type::script === $this->type ) {
+			wp_enqueue_script( $handle );
+		} elseif ( Asset_Type::style === $this->type ) {
+			wp_enqueue_style( $handle );
+		}
+
+		return $handle;
+	}
+
+	/**
+	 * Check if the condition is met.
+	 *
+	 * @return bool
+	 */
+	private function is_enqueue_condition_met(): bool {
+		return $this->enqueue_condition ? call_user_func( $this->enqueue_condition, $this ) : true;
 	}
 }

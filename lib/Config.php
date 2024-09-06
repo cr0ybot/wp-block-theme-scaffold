@@ -11,8 +11,8 @@
 
 namespace WPBTS;
 
-use get_theme_file_path;
-use get_theme_file_uri;
+use function get_theme_file_path;
+use function get_theme_file_uri;
 
 /**
  * Config class.
@@ -25,9 +25,11 @@ final class Config {
 	 * Constructor.
 	 *
 	 * @param string $build_dir Theme build directory. Default 'dist'.
+	 * @param string $theme_namespace Theme namespace used for blocks and assets. Default 'wpbts'.
 	 */
 	public function __construct(
 		private string $build_dir = 'dist',
+		private string $theme_namespace = 'wpbts',
 	) {
 		// No-op.
 	}
