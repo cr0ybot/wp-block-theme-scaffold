@@ -1,6 +1,6 @@
 <?php
 /**
- * Contracts/Hook_Subscriber.php
+ * Hooks/Hook_Subscriber.php
  *
  * @author    Cory Hughart <cory@coryhughart.com>
  * @copyright 2024 Cory Hughart

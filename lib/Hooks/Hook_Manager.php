@@ -1,6 +1,6 @@
 <?php
 /**
- * Core/HookManager.php
+ * Hooks/Hook_Manager.php
  *
  * Inspired by the EventManager class from https://carlalexander.ca/designing-system-wordpress-event-management/
  *
