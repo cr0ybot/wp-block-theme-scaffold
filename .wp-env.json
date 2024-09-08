@@ -1,0 +1,14 @@
+{
+	"plugins": [
+		"https://downloads.wordpress.org/plugin/accessibility-checker.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/create-block-theme.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/pattern-manager.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/fakerpress.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/duplicate-post.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/query-monitor.latest-stable.zip",
+		"https://downloads.wordpress.org/plugin/wordpress-seo.latest-stable.zip"
+	],
+	"themes": [
+		"."
+	]
+}

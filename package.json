@@ -8,7 +8,13 @@
 	"scripts": {
 		"start": "gulp-wp",
 		"build": "gulp-wp build",
-		"version": "gulp-wp version && git add --all"
+		"version": "gulp-wp version && git add --all",
+		"zip": "gulp-wp zip",
+		"env": "wp-env",
+		"env:setup": "wp-env start --xdebug && wp-env run cli wp theme activate wp-block-theme-scaffold",
+		"env:start": "wp-env start --xdebug",
+		"env:stop": "wp-env stop",
+		"env:destroy": "wp-env destroy"
 	},
 	"repository": {
 		"type": "git",
@@ -28,7 +34,8 @@
 	},
 	"homepage": "https://github.com/cr0ybot/wp-block-theme-scaffold#readme",
 	"devDependencies": {
-		"@wordpress/env": "^10.5.0",
+		"@wordpress/env": "^10.7.0",
+		"@wordpress/scripts": "^28.5.0",
 		"gulp-wp": "^0.6.9",
 		"sanitize.css": "^13.0.0"
 	}
