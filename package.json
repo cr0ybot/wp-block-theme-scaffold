@@ -3,8 +3,7 @@
 	"version": "0.0.0",
 	"description": "A WordPress block theme scaffold with modern sensibilities",
 	"directories": {
-		"doc": "docs",
-		"lib": "lib"
+		"doc": "docs"
 	},
 	"scripts": {
 		"start": "gulp-wp",
