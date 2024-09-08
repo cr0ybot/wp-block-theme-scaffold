@@ -1,0 +1,39 @@
+
+         ___     _       _
+ ___ ___|   |_ _| |_ ___| |_
+|  _|  _| | | | | . | . |  _|
+|___|_| |___|_  |___|___|_|
+            |___|
+
+/* TEAM */
+
+Company:   cr0ybot
+Website:   https://cr0ybot.com/
+Email:     cory@coryhughart.com
+GitHub:    https://github.com/cr0ybot
+Mastodon:  https://mastodon.social/@cr0ybot
+Bluesky:   https://bsky.app/profile/cr0ybot.com
+Facebook:  https://www.facebook.com/cory.hughart
+Instagram: https://www.instagram.com/cr0ybot/
+Location:  Chicago, IL, USA
+
+Contributors:
+
+Cory Hughart - Developer
+Your Name Here - Role
+
+
+/* ABOUT */
+
+Cory has been building websites with WordPress since 2010, and started tinkering
+with the web long before that. He is the proprietor of crockoftime.com, a blog
+about his personal fermented food journey, and is possibly a robot.
+
+
+/* TOOLS */
+
+This site was built with Cory Hughart's WordPress Block Theme Scaffold:
+https://github.com/cr0ybot/wp-block-theme-scaffold
+
+
+/* humanstxt.org */

@@ -11,6 +11,7 @@ A scaffold for block themes using the [GulpWP](https://github.com/cr0ybot/gulp-w
 5. [Custom Block Workflow](#custom-block-workflow) - A custom block development workflow using `@wordpress/scripts`.
 6. [Theme.json and front end Global Styles switcher](#themejson-and-global-styles) - A `theme.json` file for defining global styles and settings, and a Global Style Switcher block for switching between alternate global styles (dark mode).
 7. [Block Patterns, Parts, and Templates](#block-patterns-parts-and-templates) - Scaffolded `parts`, `patterns`, and `templates` folders.
+8. [Humans.txt](#humanstxt) - A `humans.txt` file for giving credit where credit is due.
 
 ### Auto-Required Includes
 
@@ -64,3 +65,7 @@ The scaffold includes a `styles` folder (not to be confused with `src/styles/`) 
 The scaffold includes a `parts` folder for reusable block parts, a `patterns` folder for block patterns, and a `templates` folder for block templates. These are automatically recognized by WordPress and can be used in the block editor. Included is a set of patterns, parts, and templates with an opinionated file naming convention to help keep things organized.
 
 Parts and templates can be overridden in the site editor, which is great for the longevity of a site, but not as great for initial site development. I recommend using the [Create Block Theme plugin](https://wordpress.org/plugins/create-block-theme/) to copy changes back to the theme files during development. WP Engine's [Pattern Manager plugin](https://wordpress.org/plugins/pattern-manager/) is also a great tool for doing the same with block patterns.
+
+### Humans.txt
+
+A `humans.txt` file is included in the root of the theme for crediting the humans and tools created by humans used in your project. The file is linked in the `<head>` and is output at the root of the site (e.g. `example.com/humans.txt`).
