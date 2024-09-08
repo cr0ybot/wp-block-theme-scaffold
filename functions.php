@@ -20,6 +20,11 @@ define( 'WPBTS_DIST_PATH', WPBTS_THEME_PATH . 'dist/' );
 define( 'WPBTS_DIST_URI', WPBTS_THEME_URI . 'dist/' );
 define( 'WPBTS_BLOCKS_PATH', WPBTS_DIST_PATH . 'blocks/' );
 
+// Load Composer autoloader if not already loaded.
+if ( is_file( __DIR__ . '/vendor/autoload.php' ) ) {
+	require_once __DIR__ . '/vendor/autoload.php';
+}
+
 /**
  * Automatically require all PHP files in the includes directory.
  * Note that these files should be namespaced and should not use functions
@@ -28,9 +33,4 @@ define( 'WPBTS_BLOCKS_PATH', WPBTS_DIST_PATH . 'blocks/' );
  */
 foreach ( glob( __DIR__ . '/includes/*.php' ) as $file ) {
 	require_once $file;
-}
-
-// Load Composer autoloader if not already loaded.
-if ( is_file( __DIR__ . '/vendor/autoload.php' ) ) {
-	require_once __DIR__ . '/vendor/autoload.php';
 }
