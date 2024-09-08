@@ -14,17 +14,6 @@
 namespace WPBTS\Utilities;
 
 /**
- * Check if the current environment is local.
- *
- * @return boolean True if the environment is local, false otherwise.
- */
-function is_local() {
-	$is_local_env = in_array( wp_get_environment_type(), array( 'local', 'development' ), true );
-	$is_local_url = strpos( home_url(), '.test' ) || strpos( home_url(), '.local' );
-	return $is_local_env || $is_local_url;
-}
-
-/**
  * Output attributes for an HTML tag from an array of key => value pairs. Individual attribute values are escaped.
  *
  * @param array $atts_array Array of key => value pairs.
