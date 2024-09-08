@@ -32,7 +32,7 @@ function theme_support() {
 	load_theme_textdomain( 'ap-theme', get_template_directory() . '/languages' );
 
 	/**
-	 * The following theme supprt is automatically enabled in block themes:
+	 * The following theme support is automatically enabled in block themes:
 	 * - post-thumbnails
 	 * - editor-styles
 	 * - responsive-embeds
