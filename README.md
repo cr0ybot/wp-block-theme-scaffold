@@ -4,15 +4,27 @@ A scaffold for block themes using the [GulpWP](https://github.com/cr0ybot/gulp-w
 
 ## Features
 
-1. [Sass Style Framework](#sass-style-framework) - A structured Sass framework for building block themes.
-2. [Block Style Overrides](#block-style-overrides) - Automatically enqueued block style overrides for core and third-party blocks.
-3. [Custom Block Workflow](#custom-block-workflow) - A custom block development workflow using `@wordpress/scripts`.
-4. [Theme.json and front end Global Styles switcher](#themejson-and-global-styles) - A `theme.json` file for defining global styles and settings, and a Global Style Switcher block for switching between alternate global styles (dark mode).
-5. [Block Patterns, Parts, and Templates](#block-patterns-parts-and-templates) - Scaffolded `parts`, `patterns`, and `templates` folders.
+1. [Auto-Required Includes](#auto-required-includes) - Automatically required files in `includes` for a functional programming approach.
+2. [Composer](#composer) - Composer for managing PHP dependencies.
+3. [Sass Style Framework](#sass-style-framework) - A structured Sass framework for building block themes.
+4. [Block Style Overrides](#block-style-overrides) - Automatically enqueued block style overrides for core and third-party blocks.
+5. [Custom Block Workflow](#custom-block-workflow) - A custom block development workflow using `@wordpress/scripts`.
+6. [Theme.json and front end Global Styles switcher](#themejson-and-global-styles) - A `theme.json` file for defining global styles and settings, and a Global Style Switcher block for switching between alternate global styles (dark mode).
+7. [Block Patterns, Parts, and Templates](#block-patterns-parts-and-templates) - Scaffolded `parts`, `patterns`, and `templates` folders.
+
+### Auto-Required Includes
+
+PHP files in the root of the `includes` folder are automatically required in `functions.php`. This means that you cannot rely on a specific import order when using functions from other includes--but you don't need to worry about it. WordPress development is event-driven via action/filter hooks, so as long as your code references those external functions within hook callbacks, you're good to go, since all of the files will be included before the first hook is fired.
+
+When adding functionality, consider adding a new include file with a descriptive name and namespace the file accordingly. For example, if you're adding a custom post type for a portfolio, you might create a file named `portfolio.php` and namespace your file as `WPBTS\Portfolio`. All other portfolio-related functions would be added to this same file.
+
+### Composer
+
+Composer is included for managing PHP dependencies. Included by default are the [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards) (tweaked in `.phpcs.xml.dist`), [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer/), and the [PHP dotenv](https://github.com/vlucas/phpdotenv) package for managing environment variables.
 
 ### Sass Style Framework
 
-Yes, this scaffold uses Sass instead of cobbling together PostCSS modules that may not play well together. I'm interested in developer experience and maintainability, and Sass is a great tool for that.
+Yes, this scaffold uses Sass instead of cobbling together PostCSS modules that may not play well together. I'm interested in developer experience and maintainability, and Sass is a great tool for that. And if you're going to use JSX for React/JS, you might as well use Sass for CSS.
 
 #### CSS Layers
 
@@ -33,11 +45,11 @@ Place styles for core and third-party blocks in `src/styles/blocks/` within a "n
 
 This is great for adding custom block styles to core blocks, which is a major part of modern theming.
 
-You could also use these for your own custom blocks, but it's recommended to use the core `block.json` `styles` and `editorStyles` properties for custom block styles.
+You could also use these for your own custom blocks, but it's recommended to use the core `block.json`'s `style` and `editorStyle` properties for custom block styles.
 
 ### Custom Block Workflow
 
-`GulpWP` includes support for compiling custom blocks using the `@wordpress/scripts` package. Custom blocks should be created as subfolders in `src/blocks/` which are transpiled to `dist/blocks/` and automatically enqueued in `inc/blocks.php`.
+`GulpWP` includes support for compiling custom blocks using the `@wordpress/scripts` package. Custom blocks should be created as subfolders in `src/blocks/` which are transpiled to `dist/blocks/` and automatically enqueued in `includes/blocks.php`.
 
 ### Theme.json and Global Styles
 
