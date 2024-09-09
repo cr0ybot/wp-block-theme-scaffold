@@ -29,7 +29,7 @@ Each layer has an equivalent folder in `src/styles/theme/` [except for blocks](#
 @use "tools/context" as context with (
 	$context: foo, // Your custom context, which should match the entry file name.
 );
-@use "../../tools/layers" with (
+@use "tools/layers" with (
 	$root: true,
 );
 
@@ -41,7 +41,7 @@ Each layer has an equivalent folder in `src/styles/theme/` [except for blocks](#
 Styles for blocks are unique in that they are generally not part of the main theme stylesheet, which means there is no "blocks" folder in `src/styles` to be output automatically in the `blocks` layer. Instead, block styles are handled in either [custom blocks](/docs/custom-block-workflow.md) or [block style overrides](/docs/block-style-overrides). At the moment, you must manually include the [layers tool](#layers-tool) when outputting block styles if you want them in the `blocks` layer:
 
 ```scss
-@use "../../tools/layers";
+@use "tools/layers";
 
 @include layers.add-to(blocks) {
 	// Your block styles here

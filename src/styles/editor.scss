@@ -10,7 +10,7 @@
 @use "tools/context" as context with (
 	$context: editor,
 );
-@use "../../tools/layers" with (
+@use "tools/layers" with (
 	$root: true,
 );
 
