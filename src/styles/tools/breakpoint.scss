@@ -40,7 +40,7 @@ $breakpoints: (
 		$breakpoint: map.get($breakpoints, $breakpoint);
 	}
 
-	@return "#{$dimension} >= #{px2em($breakpoint)}";
+	@return "#{$dimension} >= #{$breakpoint}";
 }
 
 // Sizes below the breakpoint.
@@ -49,7 +49,7 @@ $breakpoints: (
 		$breakpoint: map.get($breakpoints, $breakpoint);
 	}
 
-	@return "#{$dimension} < #{px2em($breakpoint)}";
+	@return "#{$dimension} < #{$breakpoint}";
 }
 
 // Sizes at and above $min and below $max.
@@ -61,5 +61,5 @@ $breakpoints: (
 		$max: map.get($breakpoints, $max);
 	}
 
-	@return "#{px2em($min)} <= #{$dimension} < #{px2em($max)}";
+	@return "#{$min} <= #{$dimension} < #{$max}";
 }
