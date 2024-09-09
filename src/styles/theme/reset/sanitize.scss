@@ -6,8 +6,8 @@
 // https://github.com/csstools/sanitize.css
 //
 
-@use "pkg:sanitize.css";
-@use "pkg:sanitize.css/assets.css";
-@use "pkg:sanitize.css/forms.css";
-@use "pkg:sanitize.css/reduce-motion.css";
-@use "pkg:sanitize.css/typography.css";
+@use "sanitize.css/sanitize.css";
+@use "sanitize.css/assets.css";
+@use "sanitize.css/forms.css";
+@use "sanitize.css/reduce-motion.css";
+@use "sanitize.css/typography.css";
