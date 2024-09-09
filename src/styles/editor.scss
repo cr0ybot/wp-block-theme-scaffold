@@ -10,6 +10,8 @@
 @use "tools/context" as context with (
 	$context: editor,
 );
-@use "tools/layers";
+@use "../../tools/layers" with (
+	$root: true,
+);
 
 @include layers.output-all;
