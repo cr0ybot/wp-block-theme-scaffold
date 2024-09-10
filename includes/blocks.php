@@ -16,7 +16,7 @@ namespace WPBTS\Blocks;
 use WPBTS\Assets;
 
 add_action( 'init', __NAMESPACE__ . '\\register_theme_blocks' );
-add_action( 'init', __NAMESPACE__ . '\\block_style_overrides' );
+add_action( 'init', __NAMESPACE__ . '\\block_stylesheet_overrides' );
 add_action( 'init', __NAMESPACE__ . '\\register_pattern_categories' );
 
 /**
@@ -122,7 +122,7 @@ function register_theme_blocks() {
  * NOTE: will not pick up on new styles added in a child theme, but will allow
  * overrides of existing block styles in parent theme.
  */
-function block_style_overrides() {
+function block_stylesheet_overrides() {
 	foreach ( glob( WPBTS_DIST_PATH . 'css/block_overrides/*', GLOB_ONLYDIR ) as $namespace_dir ) {
 		$namespace = basename( $namespace_dir );
 
@@ -130,13 +130,15 @@ function block_style_overrides() {
 			$blockname            = basename( $block_file, '.css' );
 			$asset                = Assets\get_asset_info( 'block_overrides/' . $namespace . '/' . $blockname );
 			$namespaced_blockname = $namespace . '/' . $blockname;
-			$filename             = is_admin() ? $blockname . '-editor' : $blockname;
+			// @todo Handle editor styles separately.
+			//$filename             = is_admin() ? $blockname . '-editor' : $blockname;
+			$filename             = $blockname;
 
 			// Enqueue the block's style.
 			\wp_enqueue_block_style(
 				$namespaced_blockname,
 				array(
-					'handle' => Assets\get_asset_handle( 'block-' . $namespace . '-' . $blockname ),
+					'handle' => Assets\get_asset_handle( 'block/' . $namespace . '/' . $blockname ),
 					'src'    => WPBTS_DIST_URI . 'css/block_overrides/' . $namespace . '/' . $filename . '.css',
 					'path'   => WPBTS_DIST_PATH . 'css/block_overrides/' . $namespace . '/' . $filename . '.css',
 					// Note: Do *not* include asset dependencies, since they come from JS and will cause the styles to not load at all.

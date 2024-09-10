@@ -15,12 +15,12 @@ namespace WPBTS\Assets;
 
 /**
  * Get a script or style asset handle for registration/enqueuing.
- * Prepends 'wpbts-' to the asset name.
+ * Prepends 'wpbts/' to the asset name.
  *
  * @param string $name Asset file name without extension.
  */
 function get_asset_handle( string $name ) {
-	return 'wpbts-' . $name;
+	return 'wpbts/' . $name;
 }
 
 /**
