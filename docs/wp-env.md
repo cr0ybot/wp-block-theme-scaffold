@@ -27,3 +27,9 @@ And to *destroy* (removes all data!) the environment:
 ```bash
 npm run env:destroy
 ```
+
+## Debugging
+
+By default, XDebug is enabled in the local environment when you run `npm run env:start`. It is recommended to read the [documentation about XDebug IDE support](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/#xdebug-ide-support).
+
+The WordPress debug log is also available in the `logs` directory in the root of the project.
