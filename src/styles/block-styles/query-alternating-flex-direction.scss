@@ -1,0 +1,17 @@
+/*!
+ * Title: Alternating Alignments
+ * Slug: query-alternating-flex-direction
+ * Block Types: core/query
+ * Is Default: false
+ * Description: Swap flex direction for alternating posts.
+ */
+
+.is-style-query-alternating-flex-direction {
+
+	.wp-block-post:nth-child(even of :not([style="display: none;"])) {
+
+		> * {
+			flex-direction: row-reverse;
+		}
+	}
+}
