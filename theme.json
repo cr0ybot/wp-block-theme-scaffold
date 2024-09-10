@@ -118,48 +118,48 @@
 			"defaultSpacingSizes": false,
 			"spacingSizes": [
 				{
-					"name": "Tiny",
+					"name": "3X-Small",
 					"size": "0.25rem",
 					"slug": "10"
 				},
 				{
-					"name": "Extra Small",
+					"name": "2X-Small",
 					"size": "0.5rem",
 					"slug": "20"
 				},
 				{
+					"name": "X-Small",
+					"size": "0.75rem",
+					"slug": "30"
+				},
+				{
 					"name": "Small",
 					"size": "1rem",
-					"slug": "30"
+					"slug": "40"
 				},
 				{
 					"name": "Medium",
 					"size": "1.5rem",
-					"slug": "40"
+					"slug": "50"
 				},
 				{
 					"name": "Large",
 					"size": "clamp(1.75rem, 4vw, 2.5rem)",
-					"slug": "50"
-				},
-				{
-					"name": "Extra large",
-					"size": "clamp(2.5rem, 5vw, 3rem)",
 					"slug": "60"
 				},
 				{
-					"name": "Huge",
-					"size": "clamp(3rem, 6vw, 4rem)",
+					"name": "X-Large",
+					"size": "clamp(2.5rem, 5vw, 3rem)",
 					"slug": "70"
 				},
 				{
-					"name": "Enormous",
-					"size": "clamp(4rem, 8vw, 6rem)",
+					"name": "2X-Large",
+					"size": "clamp(3rem, 6vw, 4rem)",
 					"slug": "80"
 				},
 				{
-					"name": "Gigantic",
-					"size": "clamp(6rem, 10vw, 8rem)",
+					"name": "3X-large",
+					"size": "clamp(4rem, 8vw, 6rem)",
 					"slug": "90"
 				}
 			],
@@ -174,31 +174,39 @@
 			"customFontSize": true,
 			"defaultFontSizes": false,
 			"dropCap": false,
-			"fluid": true,
+			"fluid": {
+				"minFontSize": "12px",
+				"minViewportWidth": "320px"
+			},
 			"fontSizes": [
 				{
-					"name": "Tiny",
+					"name": "3X-Small",
+					"slug": "xxxs",
+					"size": "0.625rem"
+				},
+				{
+					"name": "2X-Small",
 					"slug": "xxs",
 					"size": "0.75rem"
 				},
 				{
-					"name": "Extra Small",
+					"name": "X-Small",
 					"slug": "xs",
 					"size": "0.875rem"
 				},
 				{
 					"name": "Small",
-					"slug": "sm",
+					"slug": "s",
 					"size": "1rem"
 				},
 				{
 					"name": "Medium",
-					"slug": "md",
+					"slug": "m",
 					"size": "1.125rem"
 				},
 				{
 					"name": "Large",
-					"slug": "lg",
+					"slug": "l",
 					"size": "1.5rem",
 					"fluid": {
 						"max": "1.5rem",
@@ -206,7 +214,7 @@
 					}
 				},
 				{
-					"name": "Extra Large",
+					"name": "X-Large",
 					"slug": "xl",
 					"size": "2rem",
 					"fluid": {
@@ -215,7 +223,7 @@
 					}
 				},
 				{
-					"name": "Huge",
+					"name": "2X-Large",
 					"slug": "xxl",
 					"size": "2.25rem",
 					"fluid": {
@@ -224,21 +232,12 @@
 					}
 				},
 				{
-					"name": "Enormous",
+					"name": "3X-Large",
 					"slug": "xxxl",
 					"size": "3.75rem",
 					"fluid": {
 						"max": "3.75rem",
 						"min": "2rem"
-					}
-				},
-				{
-					"name": "Gigantic",
-					"slug": "xxxxl",
-					"size": "5rem",
-					"fluid": {
-						"max": "5rem",
-						"min": "2.5rem"
 					}
 				}
 			],
