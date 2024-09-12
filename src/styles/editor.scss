@@ -10,8 +10,8 @@
 @use "tools/context" as context with (
 	$context: editor,
 );
-@use "tools/layers" with (
-	$root: true,
-);
-
-@include layers.output-all;
+@use "theme/reset/*";
+@use "theme/base/*";
+@use "theme/layout/*";
+@use "theme/components/*";
+@use "theme/utilities/*";
