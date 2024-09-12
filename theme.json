@@ -1,7 +1,7 @@
 {
 	"settings": {
 		"appearanceTools": true,
-		"blocks": {},
+		"blocks": [],
 		"color": {
 			"custom": true,
 			"customDuotone": false,
@@ -129,7 +129,7 @@
 				}
 			]
 		},
-		"custom": {},
+		"custom": [],
 		"layout": {
 			"contentSize": "980px",
 			"wideSize": "1200px"
@@ -198,6 +198,77 @@
 				"minFontSize": "12px",
 				"minViewportWidth": "320px"
 			},
+			"fontFamilies": [
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Nunito",
+							"fontStyle": "normal",
+							"fontWeight": "200 1000",
+							"src": [
+								"file:./assets/fonts/Nunito-VariableFont_wght.ttf"
+							]
+						},
+						{
+							"fontFamily": "Nunito",
+							"fontStyle": "italic",
+							"fontWeight": "200 1000",
+							"src": [
+								"file:./assets/fonts/Nunito-Italic-VariableFont_wght.ttf"
+							]
+						}
+					],
+					"fontFamily": "Nunito",
+					"name": "Nunito",
+					"slug": "nunito"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "\"Shantell Sans\"",
+							"fontStyle": "italic",
+							"fontWeight": "300 800",
+							"src": [
+								"file:./assets/fonts/ShantellSans-Italic-VariableFont_BNCEINFMSPACwght.ttf"
+							]
+						},
+						{
+							"fontFamily": "\"Shantell Sans\"",
+							"fontStyle": "normal",
+							"fontWeight": "300 800",
+							"src": [
+								"file:./assets/fonts/ShantellSans-VariableFont_BNCEINFMSPACwght.ttf"
+							]
+						}
+					],
+					"fontFamily": "\"Shantell Sans\"",
+					"name": "Shantell Sans",
+					"slug": "shantell-sans"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Grandstander",
+							"fontStyle": "italic",
+							"fontWeight": "100 900",
+							"src": [
+								"file:./assets/fonts/Grandstander-Italic-VariableFont_wght.ttf"
+							]
+						},
+						{
+							"fontFamily": "Grandstander",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"src": [
+								"file:./assets/fonts/Grandstander-VariableFont_wght.ttf"
+							]
+						}
+					],
+					"fontFamily": "Grandstander",
+					"name": "Grandstander",
+					"slug": "grandstander"
+				}
+			],
 			"fontSizes": [
 				{
 					"name": "3X-Small",
@@ -266,12 +337,42 @@
 		"useRootPaddingAwareAlignments": true
 	},
 	"styles": {
-		"blocks": {},
+		"blocks": [],
 		"color": {
 			"background": "var(--wp--preset--color--background)",
 			"text": "var(--wp--preset--color--foreground)"
 		},
 		"elements": {
+			"button": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--shantell-sans)",
+					"fontSize": "var(--wp--preset--font-size--l)",
+					"fontStyle": "normal",
+					"fontWeight": "500",
+					"textTransform": "uppercase"
+				}
+			},
+			"caption": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--shantell-sans)",
+					"fontSize": "var(--wp--preset--font-size--s)"
+				}
+			},
+			"h1": {
+				"typography": {
+					"textTransform": "uppercase"
+				}
+			},
+			"h2": {
+				"typography": {
+					"textTransform": "uppercase"
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--grandstander)"
+				}
+			},
 			"link": {
 				":hover": {
 					"color": {
@@ -291,7 +392,9 @@
 				"top": "0"
 			}
 		},
-		"typography": {}
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--nunito)"
+		}
 	},
 	"templateParts": [
 		{
