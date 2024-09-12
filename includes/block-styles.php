@@ -107,12 +107,11 @@ function register_block_style_from_file_headers( string $file ): bool {
 	];
 
 	/**
-	 * If this is a default style, or if core/query is in the block names,
-	 * enqueue the block style directly as a workaround for `style_handle` not
-	 * working.
+	 * Block styles are not enqueued automatically on the front end like they
+	 * are in the editor.
 	 * @see https://github.com/WordPress/gutenberg/issues/27244
 	 */
-	if ( $style_properties['is_default'] || in_array( 'core/query', $block_names, true ) ) {
+	if ( ! is_admin() ) {
 		foreach ( $block_names as $block_name ) {
 			wp_enqueue_block_style(
 				$block_name,
