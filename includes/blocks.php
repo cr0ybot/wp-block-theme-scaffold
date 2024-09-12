@@ -123,12 +123,12 @@ function register_theme_blocks() {
  * overrides of existing block styles in parent theme.
  */
 function block_stylesheet_overrides() {
-	foreach ( glob( WPBTS_DIST_PATH . 'css/block_overrides/*', GLOB_ONLYDIR ) as $namespace_dir ) {
+	foreach ( glob( WPBTS_DIST_PATH . 'css/blocks/*', GLOB_ONLYDIR ) as $namespace_dir ) {
 		$namespace = basename( $namespace_dir );
 
 		foreach ( glob( $namespace_dir . '/*.css' ) as $block_file ) {
 			$blockname            = basename( $block_file, '.css' );
-			$asset                = Assets\get_asset_info( 'block_overrides/' . $namespace . '/' . $blockname );
+			$asset                = Assets\get_asset_info( 'blocks/' . $namespace . '/' . $blockname );
 			$namespaced_blockname = $namespace . '/' . $blockname;
 			// @todo Handle editor styles separately.
 			//$filename             = is_admin() ? $blockname . '-editor' : $blockname;
@@ -139,8 +139,8 @@ function block_stylesheet_overrides() {
 				$namespaced_blockname,
 				array(
 					'handle' => Assets\get_asset_handle( 'block/' . $namespace . '/' . $blockname ),
-					'src'    => WPBTS_DIST_URI . 'css/block_overrides/' . $namespace . '/' . $filename . '.css',
-					'path'   => WPBTS_DIST_PATH . 'css/block_overrides/' . $namespace . '/' . $filename . '.css',
+					'src'    => WPBTS_DIST_URI . 'css/blocks/' . $namespace . '/' . $filename . '.css',
+					'path'   => WPBTS_DIST_PATH . 'css/blocks/' . $namespace . '/' . $filename . '.css',
 					// Note: Do *not* include asset dependencies, since they come from JS and will cause the styles to not load at all.
 					// 'deps'   => $asset['dependencies'],
 					'ver'    => $asset['version'],
