@@ -4,67 +4,29 @@ Yes, this scaffold uses Sass instead of cobbling together PostCSS modules that m
 
 Sass Framework Features:
 
-1. [CSS Layers](#css-layers) - A structured approach to organizing styles with `@layer`.
+1. [Theme Style Layers](#theme-style-layers) - A layered approach to organizing styles.
 2. [Contexts](#contexts) - A way to output styles in different contexts.
 3. [Breakpoints](#breakpoints) - A way to define and use breakpoints in both media & container queries.
 
-## CSS Layers
+## Theme Style Layers
 
-[CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) are a way to solve specificity problems that might come about as a result of, say, [WordPress including](https://github.com/WordPress/gutenberg/issues/40159) [it's own styles](https://github.com/WordPress/gutenberg/issues/37590) [and breakpoints](https://github.com/WordPress/gutenberg/issues/35848).
+Not to be confused with [CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/), these layers are just a system of organizing styles so that you don't get in your own way. Note that styles within an `@layer` are always [less specific than unlayered styles](https://github.com/w3c/csswg-drafts/issues/6284#issuecomment-937262197), so they're practically useless for us in this context where WordPress core and plugin stylesheets are out of our control.
 
-The theme stylesheet defines 6 [@layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)s:
+The `src/styles/theme` folder includes 6 layer folders:
 
-- *Reset* - Sanitize.css for a consistent base.
+- *Reset* - Includes sanitize.css for a consistent base.
 - *Base* - Base typography and global styles that don't fit in `theme.json`.
 - *Layout* - Site layout styles that don't fit as part of a block.
 - *Components* - Reusable components and patterns.
-- *Blocks* - Block-specific styles.
 - *Utilities* - Utility classes for quick styling.
 
-Each layer has an equivalent folder in `src/styles/theme/` [except for blocks](#blocks-layer). These folders each contain an `_index.scss` file that should import all the files in the folder (I'd prefer them to be glob imported, but that is currently not possible with Sass's `meta.load-css` function, which the layer tool uses). These styles are then automatically output within the correct layers in the `frontend` and `editor` stylesheets. If you have another context in which you want to output all layers, add the below to your entry file. Be sure to also include a custom [context](#context).
+The contents of these folders are glob-imported from the entry file (in this case, `frontend.scss` and `editor.scss`) in the above order, going from the most general to the most specific. This allows you to override styles in the more general layers with styles in the more specific layers.
 
-**foo.scss:**
+Because the contents of these folders are glob-imported, you cannot rely on the order of the files within each folder. However, you should not need a specific order within each layer, as you should rely instead on selector specificity.
 
-```scss
-@use "tools/context" as context with (
-	$context: foo, // Your custom context, which should match the entry file name.
-);
-@use "tools/layers" with (
-	$root: true,
-);
+### Block Stylesheets
 
-@include layers.output-all;
-```
-
-### Blocks Layer
-
-Styles for blocks are unique in that they are generally not part of the main theme stylesheet, which means there is no "blocks" folder in `src/styles` to be output automatically in the `blocks` layer. Instead, block styles are handled in either [custom blocks](/docs/custom-block-workflow.md) or [block style overrides](/docs/block-style-overrides). At the moment, you must manually include the [layers tool](#layers-tool) when outputting block styles if you want them in the `blocks` layer:
-
-```scss
-@use "tools/layers";
-
-@include layers.add-to(blocks) {
-	// Your block styles here
-}
-```
-
-### Layers Tool
-
-The `layers` tool at `src/styles/tools/layers.scss` is a Sass module that powers the layer system. Other than for block styles, you shouldn't necessarily need to use it directly unless you're creating a new [context](#contexts). If you are, and you want to define your own layers pulled from a set of folders, you can do so like this:
-
-```scss
-@use "tools/context" with (
-	$context: foo,
-);
-@use "tools/layers" with (
-	$folder: foo, // Folder relative to `src/styles` to pull layers from.
-	$layers: layer1, layer2, layer3, // Layers to output corresponding to subfolders in $folder.
-	$root: true, // This will output the @layers declaration based on $layers.
-);
-
-// Output all layer styles for this context.
-@include layers.output-all;
-```
+Styles for blocks are unique in that they are generally not part of the main theme stylesheet, which means there is no "blocks" folder in `src/styles/theme`. Instead, block styles are handled in either [custom blocks](/docs/custom-block-workflow.md) or [block style overrides](/docs/block-style-overrides).
 
 ## Contexts
 
@@ -115,6 +77,8 @@ The `context` tool at `src/styles/tools/context.scss` is a Sass module that allo
 	border-color: blue;
 }
 ```
+
+**Note that the context tool does not currently work with block styles or block stylesheet overrides, as these do not yet have separate editor-specific stylesheets to define a context for.**
 
 ## Breakpoints
 
