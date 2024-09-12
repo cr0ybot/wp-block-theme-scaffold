@@ -1,5 +1,4 @@
 {
-	"$schema": "https://schemas.wp.org/wp/6.6/theme.json",
 	"settings": {
 		"appearanceTools": true,
 		"blocks": {},
@@ -202,64 +201,64 @@
 			"fontSizes": [
 				{
 					"name": "3X-Small",
-					"slug": "xxxs",
-					"size": "0.625rem"
+					"size": "0.625rem",
+					"slug": "xxxs"
 				},
 				{
 					"name": "2X-Small",
-					"slug": "xxs",
-					"size": "0.75rem"
+					"size": "0.75rem",
+					"slug": "xxs"
 				},
 				{
 					"name": "X-Small",
-					"slug": "xs",
-					"size": "0.875rem"
+					"size": "0.875rem",
+					"slug": "xs"
 				},
 				{
 					"name": "Small",
-					"slug": "s",
-					"size": "1rem"
+					"size": "1rem",
+					"slug": "s"
 				},
 				{
 					"name": "Medium",
-					"slug": "m",
-					"size": "1.125rem"
+					"size": "1.125rem",
+					"slug": "m"
 				},
 				{
-					"name": "Large",
-					"slug": "l",
-					"size": "1.5rem",
 					"fluid": {
 						"max": "1.5rem",
 						"min": "1.25rem"
-					}
+					},
+					"name": "Large",
+					"size": "1.5rem",
+					"slug": "l"
 				},
 				{
-					"name": "X-Large",
-					"slug": "xl",
-					"size": "2rem",
 					"fluid": {
 						"max": "2rem",
 						"min": "1.5rem"
-					}
+					},
+					"name": "X-Large",
+					"size": "2rem",
+					"slug": "xl"
 				},
 				{
-					"name": "2X-Large",
-					"slug": "xxl",
-					"size": "2.25rem",
 					"fluid": {
 						"max": "2.25rem",
 						"min": "1.75rem"
-					}
+					},
+					"name": "2X-Large",
+					"size": "2.25rem",
+					"slug": "xxl"
 				},
 				{
-					"name": "3X-Large",
-					"slug": "xxxl",
-					"size": "3.75rem",
 					"fluid": {
 						"max": "3.75rem",
 						"min": "2rem"
-					}
+					},
+					"name": "3X-Large",
+					"size": "3.75rem",
+					"slug": "xxxl"
 				}
 			],
 			"lineHeight": false
@@ -268,8 +267,22 @@
 	},
 	"styles": {
 		"blocks": {},
-		"color": {},
-		"elements": {},
+		"color": {
+			"background": "var(--wp--preset--color--background)",
+			"text": "var(--wp--preset--color--foreground)"
+		},
+		"elements": {
+			"link": {
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--purple)"
+					}
+				},
+				"color": {
+					"text": "var(--wp--preset--color--blue)"
+				}
+			}
+		},
 		"spacing": {
 			"padding": {
 				"bottom": "0",
@@ -292,5 +305,6 @@
 			"title": "Footer"
 		}
 	],
-	"version": 3
+	"version": 3,
+	"$schema": "https://schemas.wp.org/wp/6.6/theme.json"
 }
