@@ -1,0 +1,127 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Dark",
+	"description": "A dark color palette.",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#ffffff",
+					"name": "Foreground",
+					"slug": "foreground"
+				},
+				{
+					"color": "#191919",
+					"name": "Background",
+					"slug": "background"
+				},
+				{
+					"color": "#394145",
+					"name": "Grey",
+					"slug": "grey"
+				},
+				{
+					"color": "#284b59",
+					"name": "Sky",
+					"slug": "sky"
+				},
+				{
+					"color": "#0e5370",
+					"name": "Cerulean",
+					"slug": "cerulean"
+				},
+				{
+					"color": "#5d82e1",
+					"name": "Blue",
+					"slug": "blue"
+				},
+				{
+					"color": "#8483bc",
+					"name": "Purple",
+					"slug": "purple"
+				},
+				{
+					"color": "#9e7cbb",
+					"name": "Violet",
+					"slug": "violet"
+				},
+				{
+					"color": "#874b54",
+					"name": "Pink",
+					"slug": "pink"
+				},
+				{
+					"color": "#ff4962",
+					"name": "Scarlet",
+					"slug": "scarlet"
+				},
+				{
+					"color": "#f74f4f",
+					"name": "Red",
+					"slug": "red"
+				},
+				{
+					"color": "#da5d61",
+					"name": "Crimson",
+					"slug": "crimson"
+				},
+				{
+					"color": "#a87566",
+					"name": "Coffee",
+					"slug": "coffee"
+				},
+				{
+					"color": "#d0846d",
+					"name": "Sienna",
+					"slug": "sienna"
+				},
+				{
+					"color": "#ad5033",
+					"name": "Rust",
+					"slug": "rust"
+				},
+				{
+					"color": "#dd7e59",
+					"name": "Coral",
+					"slug": "coral"
+				},
+				{
+					"color": "#847140",
+					"name": "Beige",
+					"slug": "beige"
+				},
+				{
+					"color": "#987a1f",
+					"name": "Gold",
+					"slug": "gold"
+				},
+				{
+					"color": "#8e7e08",
+					"name": "Yellow",
+					"slug": "yellow"
+				},
+				{
+					"color": "#5c7a5c",
+					"name": "Olive",
+					"slug": "olive"
+				},
+				{
+					"color": "#30b470",
+					"name": "Green",
+					"slug": "green"
+				},
+				{
+					"color": "#6f9793",
+					"name": "Viridian",
+					"slug": "viridian"
+				},
+				{
+					"color": "#26776f",
+					"name": "Teal",
+					"slug": "teal"
+				}
+			]
+		}
+	}
+}
