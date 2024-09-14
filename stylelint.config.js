@@ -1,6 +1,9 @@
 module.exports ={
-	extends: '@wordpress/stylelint-config/scss',
+	extends: ['@wordpress/stylelint-config/scss'],
+	plugins: ['stylelint-order'],
 	rules: {
+		// Properties in alphabetical order
+		'order/properties-alphabetical-order': true,
 		// Disable custom-property-pattern rule.
 		'custom-property-pattern': null,
 		// Disable scss/comment-no-empty rule.

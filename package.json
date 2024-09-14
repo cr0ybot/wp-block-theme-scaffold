@@ -37,6 +37,7 @@
 		"@wordpress/env": "^10.7.0",
 		"@wordpress/scripts": "^28.5.0",
 		"gulp-wp": "^0.6.10",
-		"sanitize.css": "^13.0.0"
+		"sanitize.css": "^13.0.0",
+		"stylelint-order": "^6.0.4"
 	}
 }
