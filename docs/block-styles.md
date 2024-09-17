@@ -1,6 +1,6 @@
 # Block Styles
 
-[Block styles](https://developer.wordpress.org/themes/features/block-style-variations/) (not to be confused with [block stylesheet overrides](/docs/block-stylesheet-overrides)) are a way to create alternately styled variations (not to be confused with [block variations](https://developer.wordpress.org/themes/features/block-variations/)) of a block.
+[Block styles](https://developer.wordpress.org/themes/features/block-style-variations/) (not to be confused with [block stylesheet overrides](/docs/block-stylesheet-overrides.md)) are a way to create alternately styled variations (not to be confused with [block variations](https://developer.wordpress.org/themes/features/block-variations/)) of a block.
 
 This framework includes a system for easily defining block styles that are automatically registered and enqueued when the block is present on the page (see `includes/block-styles.php`). Add a Sass file in `src/styles/block-styles/`, ideally with the same name as your style slug. Any stylesheets in this folder are automatically registered with the handle `wpbts/block-styles/{filename}`. If you want the styles to be automatically enqueued, add a file header comment with these parameters:
 

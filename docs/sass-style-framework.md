@@ -26,7 +26,7 @@ Because the contents of these folders are glob-imported, you cannot rely on the 
 
 ### Block Stylesheets
 
-Styles for blocks are unique in that they are generally not part of the main theme stylesheet, which means there is no "blocks" folder in `src/styles/theme`. Instead, block styles are handled in either [custom blocks](/docs/custom-block-workflow.md) or [block style overrides](/docs/block-style-overrides).
+Styles for blocks are unique in that they are generally not part of the main theme stylesheet, which means there is no "blocks" folder in `src/styles/theme`. Instead, block styles are handled in either [custom blocks](/docs/custom-block-workflow.md) or [block style overrides](/docs/block-style-overrides.md).
 
 ## Contexts
 
