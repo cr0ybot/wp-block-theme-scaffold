@@ -4,7 +4,7 @@ A scaffold for block themes using the [GulpWP](https://github.com/cr0ybot/gulp-w
 
 ## Features
 
-1. [WP-Env](/docs/wp-env) - Optional Docker-powered local development environment.
+1. [WP-Env](/docs/wp-env.md) - Optional Docker-powered local development environment.
 2. [Auto-Required Includes](/docs/auto-required-includes) - Automatically required files in `includes` for a streamlined functional programming approach.
 3. [Composer](/docs/composer) - Composer for managing PHP dependencies.
 4. [Sass Style Framework](/docs/sass-style-framework) - A structured Sass framework for building block themes.
