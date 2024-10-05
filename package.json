@@ -39,5 +39,8 @@
 		"gulp-wp": "^0.6.10",
 		"sanitize.css": "^13.0.0",
 		"stylelint-order": "^6.0.4"
+	},
+	"dependencies": {
+		"@wordpress/icons": "^10.9.0"
 	}
 }
