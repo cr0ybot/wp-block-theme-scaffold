@@ -7,7 +7,8 @@
 	},
 	"scripts": {
 		"start": "wp-scripts start --webpack-copy-php --experimental-modules",
-		"build": "wp-scripts build --webpack-copy-php --experimental-modules",
+		"build": "wp-scripts build --webpack-copy-php --experimental-modules && npm run build:makepot",
+		"build:makepot": "make-pot . ./languages --exclude='src/**,languages/**,**/node_modules/**'",
 		"version": "node ./scripts/version.js && git add --all",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
@@ -42,6 +43,7 @@
 	"devDependencies": {
 		"@wordpress/env": "^10.7.0",
 		"@wordpress/scripts": "^28.6.0",
+		"@wp-blocks/make-pot": "^1.4.0",
 		"glob-import-loader": "^1.2.0",
 		"replace-in-file": "^8.2.0",
 		"sanitize.css": "^13.0.0",
