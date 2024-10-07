@@ -6,10 +6,16 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"start": "gulp-wp",
-		"build": "gulp-wp build",
-		"version": "gulp-wp version && git add --all",
-		"zip": "gulp-wp zip",
+		"start": "wp-scripts start --webpack-copy-php --experimental-modules",
+		"build": "wp-scripts build --webpack-copy-php --experimental-modules",
+		"version": "node ./scripts/version.js && git add --all",
+		"check-engines": "wp-scripts check-engines",
+		"check-licenses": "wp-scripts check-licenses",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip --webpack-copy-php --experimental-modules",
 		"env": "wp-env",
 		"env:setup": "wp-env start --xdebug && wp-env run cli wp theme activate wp-block-theme-scaffold",
 		"env:start": "wp-env start --xdebug",
@@ -35,10 +41,12 @@
 	"homepage": "https://github.com/cr0ybot/wp-block-theme-scaffold#readme",
 	"devDependencies": {
 		"@wordpress/env": "^10.7.0",
-		"@wordpress/scripts": "^28.5.0",
-		"gulp-wp": "^0.6.10",
+		"@wordpress/scripts": "^28.6.0",
+		"glob-import-loader": "^1.2.0",
+		"replace-in-file": "^8.2.0",
 		"sanitize.css": "^13.0.0",
-		"stylelint-order": "^6.0.4"
+		"stylelint-order": "^6.0.4",
+		"webpack-remove-empty-scripts": "^1.0.4"
 	},
 	"dependencies": {
 		"@wordpress/icons": "^10.9.0"
