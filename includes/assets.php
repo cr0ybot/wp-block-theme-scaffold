@@ -37,8 +37,8 @@ function get_asset_info(
 	string $slug,
 	?string $attribute = null,
 ): string|array|null {
-	$js_asset  = get_theme_file_path( '/dist/js/' . $slug . '.asset.php' );
-	$css_asset = get_theme_file_path( '/dist/css/' . $slug . '.asset.php' );
+	$js_asset  = get_theme_file_path( '/build/js/' . $slug . '.asset.php' );
+	$css_asset = get_theme_file_path( '/build/css/' . $slug . '.asset.php' );
 
 	if ( file_exists( $js_asset ) ) {
 		$asset = require $js_asset;
@@ -86,7 +86,7 @@ function register_script_asset(
 
 	$registered = wp_register_script(
 		$handle,
-		get_theme_file_uri( '/dist/js/' . $slug . '.js' ),
+		get_theme_file_uri( '/build/js/' . $slug . '.js' ),
 		array_merge( $asset['dependencies'], $dependencies ),
 		$asset['version'],
 		$args
@@ -124,7 +124,7 @@ function register_style_asset(
 
 	$registered = wp_register_style(
 		$handle,
-		get_theme_file_uri( '/dist/css/' . $slug . '.css' ),
+		get_theme_file_uri( '/build/css/' . $slug . '.css' ),
 		$dependencies,
 		$asset['version'],
 		$media
