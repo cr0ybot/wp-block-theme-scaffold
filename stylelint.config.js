@@ -35,5 +35,8 @@ module.exports ={
 				ignoreFunctions: ['if'],
 			},
 		],
+		// Allow for breakpoint functions in media queries.
+		// TODO: Validate custom functions instead of turning off.
+		'media-feature-name-no-unknown': null,
 	}
 }
