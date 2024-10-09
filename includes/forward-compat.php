@@ -24,5 +24,10 @@ function filter_block_type_metadata( array $metadata ): array {
 		}
 	}
 
+	// Add support for renaming navigation blocks.
+	if ( 'core/navigation' === $metadata['name'] ) {
+		$metadata['supports']['renaming'] = true;
+	}
+
 	return $metadata;
 }
