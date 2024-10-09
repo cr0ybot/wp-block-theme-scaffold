@@ -17,8 +17,10 @@ module.exports ={
 		],
 		// Allow "redundant" longhand properties for things like more readable grid-template-areas.
 		'declaration-block-no-redundant-longhand-properties': null,
+		// Turn off class pattern rule.
+		'selector-class-pattern': null,
 		// Turn off nested selector rule.
-		"selector-nested-pattern": null,
+		'selector-nested-pattern': null,
 		// Exceptions to at-rule-empty-line-before.
 		'at-rule-empty-line-before': [
 			'always',
