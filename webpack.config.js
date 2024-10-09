@@ -80,7 +80,7 @@ const configs = defaultConfigs.map( ( defaultConfig ) => {
 			plugins: [
 				new RemoveEmptyScriptsPlugin({
 					ignore: [
-						/.*asset.php$/,
+						/.*asset\.php$/,
 					]
 				}),
 				new CSSAssetFilesWebpackPlugin(),
