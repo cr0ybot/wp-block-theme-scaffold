@@ -89,29 +89,7 @@ function register_theme_blocks() {
 				}
 			}
 
-			$block_options    = array();
-			$render_file_path = $block_folder . '/render.php';
-
-			if ( file_exists( $render_file_path ) ) {
-
-				// Only add `render_callback` if `render` is not defined or if there is no `acf.renderTemplate` registered.
-				if ( ! isset( $metadata['render'] ) && ( ! $metadata['acf']['renderTemplate'] ?? false ) ) {
-
-					// Only add the render callback if the block folder has a file called render.php.
-					$block_options['render_callback'] = function ( $attributes, $content, $block ) use ( $render_file_path ) {
-
-						// Create helpful variables aside from $attributes, $content, and $block that will be accessible in the render.php file.
-						$context = $block->context;
-
-						// Get the output from the render.php file.
-						ob_start();
-						include $render_file_path;
-						return ob_get_clean();
-					};
-				}
-			}
-
-			\register_block_type_from_metadata( $block_folder, $block_options );
+			\register_block_type_from_metadata( $block_folder );
 		}
 	}
 }
@@ -131,8 +109,8 @@ function block_stylesheet_overrides() {
 			$asset                = Assets\get_asset_info( 'blocks/' . $namespace . '/' . $blockname );
 			$namespaced_blockname = $namespace . '/' . $blockname;
 			// @todo Handle editor styles separately.
-			//$filename             = is_admin() ? $blockname . '-editor' : $blockname;
-			$filename             = $blockname;
+			// $filename             = is_admin() ? $blockname . '-editor' : $blockname;
+			$filename = $blockname;
 
 			// Enqueue the block's style.
 			\wp_enqueue_block_style(
