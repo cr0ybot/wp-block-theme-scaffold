@@ -6,9 +6,10 @@
 		"doc": "docs"
 	},
 	"scripts": {
-		"start": "wp-scripts start --webpack-copy-php --experimental-modules",
+		"start": "npm run clean && wp-scripts start --webpack-copy-php --experimental-modules",
 		"build": "wp-scripts build --webpack-copy-php --experimental-modules && npm run build:makepot",
 		"build:makepot": "make-pot . ./languages --exclude='src/**,languages/**,**/node_modules/**'",
+		"clean": "rm -rf ./build",
 		"version": "node ./scripts/version.js && git add --all",
 		"check-engines": "wp-scripts check-engines",
 		"check-licenses": "wp-scripts check-licenses",
