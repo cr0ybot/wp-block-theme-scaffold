@@ -31,6 +31,8 @@ const configs = defaultConfigs.map( ( defaultConfig ) => {
 		sassOptions: {
 			// Add src/styles to includePaths (not loadPaths) for Sass loader.
 			includePaths,
+			// Ensure comments are preserved.
+			outputStyle: 'expanded',
 		},
 	};
 
