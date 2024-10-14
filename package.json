@@ -7,7 +7,7 @@
 	},
 	"scripts": {
 		"start": "npm run clean && wp-scripts start --webpack-copy-php --experimental-modules",
-		"build": "wp-scripts build --webpack-copy-php --experimental-modules && npm run build:makepot",
+		"build": "wp-scripts build --webpack-copy-php --experimental-modules",
 		"build:makepot": "make-pot . ./languages --exclude='src/**,languages/**,**/node_modules/**'",
 		"clean": "rm -rf ./build",
 		"version": "node ./scripts/version.js && git add --all",
