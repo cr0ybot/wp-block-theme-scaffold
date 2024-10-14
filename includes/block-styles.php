@@ -67,7 +67,7 @@ function register_stylesheets(): void {
 		);
 
 		// If filename ends in -rtl, continue.
-		// @todo enqueue these with the main stylesheet.
+		// RTL styles are handled in register_block_style_from_file_headers().
 		if ( substr( pathinfo( $stylesheet, PATHINFO_FILENAME ), -4 ) === '-rtl' ) {
 			continue;
 		}
@@ -127,6 +127,13 @@ function register_block_style_from_file_headers( string $file ): bool {
 					'path'   => $file,
 					'ver'	=> Assets\get_asset_info( get_block_style_path( $filename ) )['version'],
 				]
+			);
+
+			// Handle RTL stylesheet.
+			wp_style_add_data(
+				$style_properties['style_handle'],
+				'rtl',
+				'replace'
 			);
 		}
 	}
