@@ -35,6 +35,7 @@
 
 	> header {
 		grid-area: header;
+		z-index: 999; // Ensure dropdowns are above other content.
 	}
 
 	> main {
