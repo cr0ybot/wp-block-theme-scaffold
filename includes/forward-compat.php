@@ -29,5 +29,12 @@ function filter_block_type_metadata( array $metadata ): array {
 		$metadata['supports']['renaming'] = true;
 	}
 
+	// Add support for background color on image blocks.
+	if ( 'core/image' === $metadata['name'] ) {
+		$metadata['supports']['color'] = [
+			'background' => true,
+		];
+	}
+
 	return $metadata;
 }
