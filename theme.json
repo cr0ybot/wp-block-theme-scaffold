@@ -208,8 +208,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "200 1000",
 							"src": [
-								"file:./assets/fonts/Nunito-VariableFont_wght-subset.woff",
-								"file:./assets/fonts/Nunito-VariableFont_wght-subset.woff2"
+								"file:./assets/fonts/Nunito-VariableFont_wght.ttf"
 							]
 						},
 						{
@@ -217,8 +216,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "200 1000",
 							"src": [
-								"file:./assets/fonts/Nunito-Italic-VariableFont_wght-subset.woff",
-								"file:./assets/fonts/Nunito-Italic-VariableFont_wght-subset.woff2"
+								"file:./assets/fonts/Nunito-Italic-VariableFont_wght.ttf"
 							]
 						}
 					],
@@ -233,8 +231,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "300 800",
 							"src": [
-								"file:./assets/fonts/ShantellSans-Italic-VariableFont_BNCEINFMSPACwght-subset.woff",
-								"file:./assets/fonts/ShantellSans-Italic-VariableFont_BNCEINFMSPACwght-subset.woff2"
+								"file:./assets/fonts/ShantellSans-Italic-VariableFont_BNCEINFMSPACwght.ttf"
 							]
 						},
 						{
@@ -242,8 +239,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "300 800",
 							"src": [
-								"file:./assets/fonts/ShantellSans-VariableFont_BNCEINFMSPACwght-subset.woff",
-								"file:./assets/fonts/ShantellSans-VariableFont_BNCEINFMSPACwght-subset.woff2"
+								"file:./assets/fonts/ShantellSans-VariableFont_BNCEINFMSPACwght.ttf"
 							]
 						}
 					],
@@ -258,8 +254,7 @@
 							"fontStyle": "italic",
 							"fontWeight": "100 900",
 							"src": [
-								"file:./assets/fonts/Grandstander-Italic-VariableFont_wght-subset.woff",
-								"file:./assets/fonts/Grandstander-Italic-VariableFont_wght-subset.woff2"
+								"file:./assets/fonts/Grandstander-Italic-VariableFont_wght.ttf"
 							]
 						},
 						{
@@ -267,8 +262,7 @@
 							"fontStyle": "normal",
 							"fontWeight": "100 900",
 							"src": [
-								"file:./assets/fonts/Grandstander-VariableFont_wght-subset.woff",
-								"file:./assets/fonts/Grandstander-VariableFont_wght-subset.woff2"
+								"file:./assets/fonts/Grandstander-VariableFont_wght.ttf"
 							]
 						}
 					],
