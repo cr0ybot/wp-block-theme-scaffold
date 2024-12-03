@@ -204,7 +204,6 @@
 				{
 					"fontFace": [
 						{
-							"fontDisplay": "swap",
 							"fontFamily": "Nunito",
 							"fontStyle": "normal",
 							"fontWeight": "200 1000",
@@ -214,7 +213,6 @@
 							]
 						},
 						{
-							"fontDisplay": "swap",
 							"fontFamily": "Nunito",
 							"fontStyle": "italic",
 							"fontWeight": "200 1000",
@@ -224,15 +222,14 @@
 							]
 						}
 					],
-					"fontFamily": "Nunito, ui-rounded, 'Hiragino Maru Gothic ProN', Quicksand, Comfortaa, Manjari, 'Arial Rounded MT', 'Arial Rounded MT Bold', Arial, Calibri, source-sans-pro, sans-serif",
+					"fontFamily": "Nunito",
 					"name": "Nunito",
 					"slug": "nunito"
 				},
 				{
 					"fontFace": [
 						{
-							"fontDisplay": "swap",
-							"fontFamily": "'Shantell Sans'",
+							"fontFamily": "\"Shantell Sans\"",
 							"fontStyle": "italic",
 							"fontWeight": "300 800",
 							"src": [
@@ -241,8 +238,7 @@
 							]
 						},
 						{
-							"fontDisplay": "swap",
-							"fontFamily": "'Shantell Sans'",
+							"fontFamily": "\"Shantell Sans\"",
 							"fontStyle": "normal",
 							"fontWeight": "300 800",
 							"src": [
@@ -251,14 +247,13 @@
 							]
 						}
 					],
-					"fontFamily": "'Shantell Sans', 'Bradley Hand', Chilanka, TSCu_Comic, 'Comic Sans', casual, cursive",
+					"fontFamily": "\"Shantell Sans\"",
 					"name": "Shantell Sans",
 					"slug": "shantell-sans"
 				},
 				{
 					"fontFace": [
 						{
-							"fontDisplay": "swap",
 							"fontFamily": "Grandstander",
 							"fontStyle": "italic",
 							"fontWeight": "100 900",
@@ -268,7 +263,6 @@
 							]
 						},
 						{
-							"fontDisplay": "swap",
 							"fontFamily": "Grandstander",
 							"fontStyle": "normal",
 							"fontWeight": "100 900",
@@ -278,7 +272,7 @@
 							]
 						}
 					],
-					"fontFamily": "Grandstander, Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif",
+					"fontFamily": "Grandstander",
 					"name": "Grandstander",
 					"slug": "grandstander"
 				}
