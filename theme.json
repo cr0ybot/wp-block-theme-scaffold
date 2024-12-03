@@ -14,125 +14,104 @@
 			"gradients": [],
 			"palette": [
 				{
-					"color": "#191919",
+					"color": "var(--wp--custom--color--black)",
 					"name": "Foreground",
 					"slug": "foreground"
 				},
 				{
-					"color": "#ffffff",
+					"color": "var(--wp--custom--color--very-dark-gray)",
+					"name": "Foreground Subtle",
+					"slug": "foreground-subtle"
+				},
+				{
+					"color": "var(--wp--custom--color--dark-gray)",
+					"name": "Foreground Muted",
+					"slug": "foreground-muted"
+				},
+				{
+					"color": "var(--wp--custom--color--gray)",
+					"name": "Foreground Mild",
+					"slug": "foreground-mild"
+				},
+				{
+					"color": "var(--wp--custom--color--light-gray)",
+					"name": "Background Mild",
+					"slug": "background-mild"
+				},
+				{
+					"color": "var(--wp--custom--color--very-light-gray)",
+					"name": "Background Muted",
+					"slug": "background-muted"
+				},
+				{
+					"color": "var(--wp--custom--color--almost-white)",
+					"name": "Background Subtle",
+					"slug": "background-subtle"
+				},
+				{
+					"color": "var(--wp--custom--color--white)",
 					"name": "Background",
 					"slug": "background"
 				},
 				{
-					"color": "#ccd6dd",
-					"name": "Grey",
-					"slug": "grey"
+					"color": "var(--wp--custom--color--cyan)",
+					"name": "Primary",
+					"slug": "primary"
 				},
 				{
-					"color": "#86cfef",
-					"name": "Sky",
-					"slug": "sky"
+					"color": "var(--wp--custom--color--yellow)",
+					"name": "Secondary",
+					"slug": "secondary"
 				},
 				{
-					"color": "#29abe2",
-					"name": "Cerulean",
-					"slug": "cerulean"
+					"color": "var(--wp--custom--color--purple)",
+					"name": "Tertiary",
+					"slug": "tertiary"
 				},
 				{
-					"color": "#2e3192",
-					"name": "Blue",
-					"slug": "blue"
+					"color": "var(--wp--custom--color--green)",
+					"name": "Success",
+					"slug": "success"
 				},
 				{
-					"color": "#3c3b6e",
-					"name": "Purple",
-					"slug": "purple"
+					"color": "var(--wp--custom--color--blue)",
+					"name": "Info",
+					"slug": "info"
 				},
 				{
-					"color": "#4f2d6a",
-					"name": "Violet",
-					"slug": "violet"
+					"color": "var(--wp--custom--color--orange)",
+					"name": "Warning",
+					"slug": "warning"
 				},
 				{
-					"color": "#d17886",
-					"name": "Pink",
-					"slug": "pink"
-				},
-				{
-					"color": "#dd2e44",
-					"name": "Scarlet",
-					"slug": "scarlet"
-				},
-				{
-					"color": "#be1931",
-					"name": "Red",
-					"slug": "red"
-				},
-				{
-					"color": "#a01d21",
-					"name": "Crimson",
-					"slug": "crimson"
-				},
-				{
-					"color": "#562111",
-					"name": "Coffee",
-					"slug": "coffee"
-				},
-				{
-					"color": "#8a4b38",
-					"name": "Sienna",
-					"slug": "sienna"
-				},
-				{
-					"color": "#c1694f",
-					"name": "Rust",
-					"slug": "rust"
-				},
-				{
-					"color": "#db5e2c",
-					"name": "Coral",
-					"slug": "coral"
-				},
-				{
-					"color": "#f8e8bf",
-					"name": "Beige",
-					"slug": "beige"
-				},
-				{
-					"color": "#ffce3b",
-					"name": "Gold",
-					"slug": "gold"
-				},
-				{
-					"color": "#f9e02d",
-					"name": "Yellow",
-					"slug": "yellow"
-				},
-				{
-					"color": "#669966",
-					"name": "Olive",
-					"slug": "olive"
-				},
-				{
-					"color": "#068241",
-					"name": "Green",
-					"slug": "green"
-				},
-				{
-					"color": "#336662",
-					"name": "Viridian",
-					"slug": "viridian"
-				},
-				{
-					"color": "#3f9e95",
-					"name": "Teal",
-					"slug": "teal"
+					"color": "var(--wp--custom--color--red)",
+					"name": "Danger",
+					"slug": "danger"
 				}
 			]
 		},
-		"custom": {},
+		"custom": {
+			"color": {
+				"black": "#1d1f21",
+				"very-dark-gray": "#282a2e",
+				"dark-gray": "#373b41",
+				"gray": "#969896",
+				"light-gray": "#b4b7b4",
+				"very-light-gray": "#c5c8c6",
+				"almost-white": "#e0e0e0",
+				"white": "#ffffff",
+				"red": "#cc6666",
+				"orange": "#de935f",
+				"yellow": "#f0c674",
+				"green": "#b5bd68",
+				"cyan": "#8abeb7",
+				"blue": "#81a2be",
+				"purple": "#b294bb",
+				"brown": "#a3685a"
+			}
+		},
 		"layout": {
-			"contentSize": "980px",
+			"contentSize": "800px",
 			"wideSize": "1200px"
 		},
 		"spacing": {
