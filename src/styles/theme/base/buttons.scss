@@ -1,0 +1,17 @@
+/**
+ * Base: buttons.
+ */
+
+.wp-element-button {
+	transition: var(--wp--custom--transition--reset);
+
+	&:not(.disabled, [disabled]) {
+
+		&:hover,
+		&:focus {
+			transition: var(--wp--custom--transition--fast);
+		}
+
+		&:active {}
+	}
+}

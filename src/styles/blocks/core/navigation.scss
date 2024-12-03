@@ -1,0 +1,17 @@
+/**
+ * Block: core/navigation.
+ */
+
+.wp-block-navigation {
+
+	&.is-content-justification-stretch {
+
+		.wp-block-navigation__container {
+
+			&.is-vertical {
+				// Fix vertical alignment "justification".
+				--navigation-layout-align: stretch;
+			}
+		}
+	}
+}

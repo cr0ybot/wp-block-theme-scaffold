@@ -30,6 +30,7 @@ node_modules/
 .env
 
 # Build files
+build/
 dist/
 
 /vendor/

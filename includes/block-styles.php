@@ -66,6 +66,12 @@ function register_stylesheets(): void {
 			get_block_style_path( pathinfo( $stylesheet, PATHINFO_FILENAME ) )
 		);
 
+		// If filename ends in -rtl, continue.
+		// RTL styles are handled in register_block_style_from_file_headers().
+		if ( substr( pathinfo( $stylesheet, PATHINFO_FILENAME ), -4 ) === '-rtl' ) {
+			continue;
+		}
+
 		// Automatically register block styles if the file has a file header.
 		register_block_style_from_file_headers( $stylesheet );
 	}
@@ -121,6 +127,13 @@ function register_block_style_from_file_headers( string $file ): bool {
 					'path'   => $file,
 					'ver'	=> Assets\get_asset_info( get_block_style_path( $filename ) )['version'],
 				]
+			);
+
+			// Handle RTL stylesheet.
+			wp_style_add_data(
+				$style_properties['style_handle'],
+				'rtl',
+				'replace'
 			);
 		}
 	}

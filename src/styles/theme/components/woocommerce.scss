@@ -1,0 +1,16 @@
+/**
+ * Component: woocommerce.
+ *
+ * WooCommerce style overrides.
+ */
+
+.woocommerce {
+
+	.input-text {
+
+		&.qty {
+			// WC sets a fixed width on the qty input, which can cause issues with the box-sizing: border-box reset.
+			box-sizing: content-box;
+		}
+	}
+}

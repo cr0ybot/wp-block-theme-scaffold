@@ -1,0 +1,17 @@
+/**
+ * Base: links.
+ */
+
+a {
+
+	&:where(:not([class])) {
+		transition: var(--wp--custom--transition--reset);
+
+		&:hover,
+		&:focus {
+			transition: var(--wp--custom--transition--fast);
+		}
+
+		&:active {}
+	}
+}

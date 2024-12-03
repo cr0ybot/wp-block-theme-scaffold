@@ -16,8 +16,8 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'WPBTS_THEME_PATH', trailingslashit( get_template_directory() ) );
 define( 'WPBTS_THEME_URI', trailingslashit( get_template_directory_uri() ) );
-define( 'WPBTS_DIST_PATH', WPBTS_THEME_PATH . 'dist/' );
-define( 'WPBTS_DIST_URI', WPBTS_THEME_URI . 'dist/' );
+define( 'WPBTS_DIST_PATH', WPBTS_THEME_PATH . 'build/' );
+define( 'WPBTS_DIST_URI', WPBTS_THEME_URI . 'build/' );
 define( 'WPBTS_BLOCKS_PATH', WPBTS_DIST_PATH . 'blocks/' );
 
 // Load Composer autoloader if not already loaded.

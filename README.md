@@ -1,6 +1,6 @@
 # Block Theme Scaffold for WordPress
 
-A scaffold for block themes using the [GulpWP](https://github.com/cr0ybot/gulp-wp) workflow.
+A scaffold for block themes using a modified [wp-scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) workflow.
 
 ## Features
 

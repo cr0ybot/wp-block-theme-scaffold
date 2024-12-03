@@ -29,11 +29,13 @@
 	}
 
 	> * {
+		margin-top: 0;
 		min-width: 0; // Resolves issue with some elements forcing horizontal overflow.
 	}
 
 	> header {
 		grid-area: header;
+		z-index: 999; // Ensure dropdowns are above other content.
 	}
 
 	> main {

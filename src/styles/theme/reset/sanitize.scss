@@ -6,8 +6,8 @@
 // https://github.com/csstools/sanitize.css
 //
 
-@use "sanitize.css/sanitize.css";
-@use "sanitize.css/assets.css";
-@use "sanitize.css/forms.css";
-@use "sanitize.css/reduce-motion.css";
-@use "sanitize.css/typography.css";
+@import "~sanitize.css/sanitize.css";
+@import "~sanitize.css/assets.css";
+@import "~sanitize.css/forms.css";
+@import "~sanitize.css/reduce-motion.css";
+@import "~sanitize.css/typography.css";

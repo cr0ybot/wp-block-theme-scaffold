@@ -29,7 +29,7 @@ function theme_support() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'ap-theme', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'wpbts', get_template_directory() . '/languages' );
 
 	/**
 	 * The following theme support is automatically enabled in block themes:
