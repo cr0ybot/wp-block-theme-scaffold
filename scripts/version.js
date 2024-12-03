@@ -6,8 +6,6 @@
 
 const { getPackage} = require( './utils' );
 
-const { replaceInFile } = import( 'replace-in-file' );
-
 /**
  * Get version from package.json.
  *
