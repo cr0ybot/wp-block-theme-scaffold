@@ -345,7 +345,8 @@
 					"size": "3.75rem",
 					"slug": "xxxl"
 				}
-			]
+			],
+			"lineHeight": false
 		},
 		"useRootPaddingAwareAlignments": true
 	},
@@ -357,10 +358,6 @@
 		},
 		"elements": {
 			"button": {
-				"color": {
-					"background": "var(--wp--preset--color--gold)",
-					"text": "var(--wp--preset--color--foreground)"
-				},
 				"typography": {
 					"fontFamily": "var(--wp--preset--font-family--shantell-sans)",
 					"fontSize": "var(--wp--preset--font-size--l)",
@@ -377,19 +374,12 @@
 			},
 			"h1": {
 				"typography": {
-					"fontSize": "2.5rem",
 					"textTransform": "uppercase"
 				}
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--xxl)",
 					"textTransform": "uppercase"
-				}
-			},
-			"h3": {
-				"typography": {
-					"fontSize": "var(--wp--preset--font-size--xl)"
 				}
 			},
 			"heading": {
