@@ -108,6 +108,11 @@
 				"blue": "#81a2be",
 				"purple": "#b294bb",
 				"brown": "#a3685a"
+			},
+			"transition": {
+				"default": "0.2s",
+				"fast": "0.1s",
+				"reset": "0.3s"
 			}
 		},
 		"layout": {
