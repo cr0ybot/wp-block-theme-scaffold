@@ -42,8 +42,8 @@
 	},
 	"homepage": "https://github.com/cr0ybot/wp-block-theme-scaffold#readme",
 	"devDependencies": {
-		"@wordpress/env": "^10.7.0",
-		"@wordpress/scripts": "^28.6.0",
+		"@wordpress/env": "^10.13.0",
+		"@wordpress/scripts": "^30.6.0",
 		"@wp-blocks/make-pot": "^1.4.0",
 		"glob-import-loader": "^1.2.0",
 		"replace-in-file": "^8.2.0",
@@ -52,8 +52,8 @@
 		"webpack-remove-empty-scripts": "^1.0.4"
 	},
 	"dependencies": {
-		"@wordpress/icons": "^10.9.0",
-		"@wordpress/interactivity": "^6.9.0",
+		"@wordpress/icons": "^10.13.0",
+		"@wordpress/interactivity": "^6.13.0",
 		"clsx": "^2.1.1"
 	}
 }
